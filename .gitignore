@@ -1,0 +1,8 @@
+# dependencies
+frontend/notes-manager/node_modules
+/.pnp
+.pnp.js
+
+**/.idea
+backend/NotesManager/target
+
