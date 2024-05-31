@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #D4B483;
+}
+body #leng-buttons {
+  display: grid;
+  justify-content: end;
+  grid-auto-flow: column;
+  gap: 10px;
+}
+body #leng-buttons .lengBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+body #leng-buttons .lengBtn:hover {
+  opacity: 0.8;
+}
+body #leng-buttons .lengBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5); /* Візуальний ефект при фокусі */
+}
+body #notes {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  background-color: aliceblue;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px;
+}
+body #notes .form {
+  padding: 20px;
+  background-color: #C2C1C2;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/*# sourceMappingURL=index.css.map */
