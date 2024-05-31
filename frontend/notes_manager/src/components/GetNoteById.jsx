@@ -35,7 +35,7 @@ export function GetNoteById(){
     };
 
     return (
-        <div>
+        <div className="getById form">
             <h1><Trans i18nKey="noteById">Note by id</Trans></h1>
             <input
                 type="text"

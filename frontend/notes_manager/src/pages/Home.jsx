@@ -23,7 +23,7 @@ export const Home = () => {
                 ))}
             </div>
               <NoteList />
-                <GetNoteById />
+                {/*<GetNoteById />*/}
         </>
     );
 }

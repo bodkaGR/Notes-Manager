@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import {CreateNote} from "./CreateNote";
 import {UpdateNote} from "./UpdateNote";
 import {useTranslation, Trans} from "react-i18next";
+import {GetNoteById} from "./GetNoteById";
 
 export function NoteList(){
     const {i18n} = useTranslation()
@@ -43,6 +44,7 @@ export function NoteList(){
             <div id="create-update">
                 <CreateNote notes = {notes} setNotes = {setNotes} />
                 <UpdateNote notes = {notes} setNotes = {setNotes}/>
+                <GetNoteById />
             </div>
             <div id="notes-list">
                 <h1><Trans i18nKey='title'>Notes</Trans></h1>
