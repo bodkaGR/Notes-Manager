@@ -1,5 +1,4 @@
 import {NoteList} from "../components/NoteList";
-import {GetNoteById} from "../components/GetNoteById";
 import {useTranslation, Trans} from "react-i18next";
 
 const lngs = {
@@ -11,7 +10,7 @@ export const Home = () => {
     const {i18n} = useTranslation()
     return (
         <>
-            <div id="leng-buttons">
+            <div id="leng-buttons" data-testid="cypress-lang-buttons">
                 {Object.keys(lngs).map((lng) => (
                     <button className="lengBtn"
                         type="submit"
@@ -23,7 +22,6 @@ export const Home = () => {
                 ))}
             </div>
               <NoteList />
-                {/*<GetNoteById />*/}
         </>
     );
 }

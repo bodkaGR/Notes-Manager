@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {Trans} from "react-i18next";
+import '../style/inputFields.scss'
 
 export function CreateNote(props){
     const [formData, setFormData] = useState({

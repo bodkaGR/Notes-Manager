@@ -3,6 +3,8 @@ import {CreateNote} from "./CreateNote";
 import {UpdateNote} from "./UpdateNote";
 import {useTranslation, Trans} from "react-i18next";
 import {GetNoteById} from "./GetNoteById";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import '../style/notesList.scss'
 
 export function NoteList(){
     const {i18n} = useTranslation()
@@ -40,7 +42,7 @@ export function NoteList(){
     }
 
     return (
-        <div id="notes">
+        <div id="notes" data-testid="cypress-notes-container">
             <div id="create-update">
                 <CreateNote notes = {notes} setNotes = {setNotes} />
                 <UpdateNote notes = {notes} setNotes = {setNotes}/>
@@ -48,18 +50,26 @@ export function NoteList(){
             </div>
             <div id="notes-list">
                 <h1><Trans i18nKey='title'>Notes</Trans></h1>
-                <ul>
+                <ul id="list">
+                    <TransitionGroup>
                     {
                         notes.map(note => (
-                            <li key = {note.id}>
-                                <strong>ID</strong> {note.id},
-                                <strong>Note name</strong> {note.noteName},
-                                <strong>Description</strong> {note.description},
-                                <strong>Date</strong> {note.date}
-                                <button key={note.id} onClick={()=>{deleteHandler(note.id)}}>Delete</button>
-                            </li>
+                            <CSSTransition
+                                key={note.id}
+                                timeout={1000}
+                                classNames="list-item"
+                            >
+                                <li key = {note.id} className="list-item" data-testid="cypress-noteList">
+                                    <strong>ID</strong> {note.id} <br/>
+                                    <strong>Note name</strong> {note.noteName} <br/>
+                                    <strong>Description</strong> {note.description} <br/>
+                                    <strong>Date</strong> {note.date} <br/>
+                                    <button key={note.id} onClick={()=>{deleteHandler(note.id)}}>Delete</button>
+                                </li>
+                            </CSSTransition>
                         ))
                     }
+                    </TransitionGroup>
                 </ul>
             </div>
         </div>

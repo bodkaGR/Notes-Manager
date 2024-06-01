@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #D4B483;
+  font-family: 'Roboto', sans-serif;
 
   #leng-buttons {
     display: grid;
@@ -34,7 +35,7 @@ body {
   #notes {
     display: grid;
     grid-auto-flow: column;
-    justify-content: space-around;
+    //justify-content: space-around;
     background-color: aliceblue;
     border-radius: 20px;
     margin: 10px;
@@ -47,10 +48,9 @@ body {
       margin: 10px;
     }
 
-    //#create-update {
-    //  display: grid;
-    //  justify-content: space-between;
-    //}
+    #create-update{
+      padding-right: 20%;
+    }
   }
 
 }
